@@ -1,0 +1,349 @@
+/* ============================= */
+/* FONT: CODE PRO                */
+/* ============================= */
+@font-face {
+  font-family: "CodePro";
+  src: url("../asset/font/CodePro-Regular.woff2") format("woff2");
+  font-weight: 400;
+}
+
+@font-face {
+  font-family: "CodePro";
+  src: url("../asset/font/CodePro-Bold.woff2") format("woff2");
+  font-weight: 700;
+}
+
+/* ============================= */
+/* RESET GLOBAL                  */
+/* ============================= */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "CodePro", sans-serif;
+}
+
+body {
+  overflow-x: hidden;
+  color: white;
+}
+
+/* ============================= */
+/* BACKGROUND                    */
+/* ============================= */
+.background {
+  position: fixed;
+  inset: 0;
+  background: url("../asset/bg.png") center / cover no-repeat;
+  z-index: -1;
+}
+
+/* ============================= */
+/* HEADER KIRI ATAS              */
+/* ============================= */
+.top-left {
+  position: fixed;
+  top: 32px;
+  left: 40px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  z-index: 10;
+}
+
+.top-logo {
+  width: 32px;
+}
+
+.brand-text {
+  font-size: 18px;
+  font-weight: 700;
+  letter-spacing: 1px;
+}
+
+/* ============================= */
+/* HERO (LOGIN / LANDING)        */
+/* ============================= */
+.hero {
+  display: flex;
+  height: 100vh;
+  padding-left: 120px;
+  padding-right: 120px;
+}
+
+/* ----- KIRI ----- */
+.hero-left {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+
+  /* GESER SEMUA KONTEN KIRI */
+  transform: translateX(0px) translateY(0px);
+}
+
+.headline {
+  font-size: 56px;
+  font-weight: 700;
+  line-height: 1.2;
+  margin-bottom: 48px;
+}
+
+/* BUTTON LOGIN */
+.btn-login {
+  width: 180px;
+  height: 54px;
+  border-radius: 999px;
+  border: none;
+  background: linear-gradient(90deg, #6fa3ff, #9dbbff);
+  color: #111;
+  font-size: 16px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.btn-login:hover {
+  transform: scale(1.06);
+}
+
+/* ----- KANAN ----- */
+.hero-right {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  /* GESER AREA LOGO BESAR */
+  transform: translateX(0px) translateY(0px);
+}
+
+/* LOGO BESAR */
+.logo-big {
+  width: 420px;
+
+  /* SHADOW LOGO */
+  filter:
+    drop-shadow(0 20px 40px rgba(0,0,0,0.6))
+    drop-shadow(0 0 40px rgba(255,255,255,0.15));
+
+  /* GESER LOGO BESAR */
+  transform: translateX(0px) translateY(0px);
+}
+
+/* ============================= */
+/* ANIMASI MASUK                 */
+/* ============================= */
+@keyframes fadeLeft {
+  from { opacity: 0; transform: translateX(-40px); }
+  to { opacity: 1; transform: translateX(0); }
+}
+
+@keyframes fadeRight {
+  from { opacity: 0; transform: translateX(40px); }
+  to { opacity: 1; transform: translateX(0); }
+}
+
+.animate-left {
+  animation: fadeLeft 1s ease forwards;
+}
+
+.animate-right {
+  animation: fadeRight 1s ease forwards;
+}
+
+/* ============================= */
+/* MODAL LOGIN                   */
+/* ============================= */
+.modal {
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.6);
+  display: none;
+  align-items: center;
+  justify-content: center;
+  z-index: 20;
+}
+
+.modal.show {
+  display: flex;
+}
+
+.modal-content {
+  background: #0b0b0b;
+  padding: 32px;
+  width: 320px;
+  border-radius: 20px;
+  border: 1px solid #2f3336;
+  text-align: center;
+  position: relative;
+}
+
+.modal-content h2 {
+  margin-bottom: 24px;
+}
+
+/* BUTTON MODAL */
+.modal-btn {
+  width: 100%;
+  height: 48px;
+  border-radius: 999px;
+  border: none;
+  font-weight: 700;
+  cursor: pointer;
+  margin-bottom: 12px;
+  transition: all 0.3s ease;
+}
+
+.modal-btn.primary {
+  background: linear-gradient(90deg, #6fa3ff, #9dbbff);
+  color: #111;
+}
+
+.modal-btn.secondary {
+  background: transparent;
+  border: 2px solid #6fa3ff;
+  color: #6fa3ff;
+}
+
+.modal-btn:hover {
+  transform: scale(1.05);
+}
+
+.close {
+  position: absolute;
+  top: 12px;
+  right: 16px;
+  font-size: 24px;
+  cursor: pointer;
+}
+
+/* ============================= */
+/* REGISTER / AUTH PAGE          */
+/* ============================= */
+.auth-page {
+  display: flex;
+  height: 100vh;
+  padding: 120px;
+}
+
+/* KIRI */
+.auth-left {
+  flex: 1;
+}
+
+.auth-title {
+  font-size: 52px;
+  font-weight: 700;
+  margin-bottom: 20px;
+}
+
+.auth-subtitle {
+  font-size: 18px;
+  color: #d0d0d0;
+}
+
+/* KANAN */
+.auth-right {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* CARD */
+.auth-card {
+  width: 360px;
+  padding: 32px;
+  background: rgba(0,0,0,0.85);
+  border-radius: 20px;
+  border: 1px solid #2f3336;
+}
+
+.auth-card h2 {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+/* INPUT */
+.auth-card input {
+  width: 100%;
+  padding: 14px;
+  margin-bottom: 14px;
+  background: transparent;
+  border: 1px solid #2f3336;
+  border-radius: 10px;
+  color: white;
+}
+
+.auth-card input:focus {
+  outline: none;
+  border-color: #6fa3ff;
+}
+
+/* BUTTON AUTH */
+.auth-btn {
+  width: 100%;
+  height: 48px;
+  border-radius: 999px;
+  border: none;
+  font-weight: 700;
+  cursor: pointer;
+  background: linear-gradient(90deg, #6fa3ff, #9dbbff);
+  color: #111;
+}
+
+.auth-btn:hover {
+  transform: scale(1.04);
+}
+
+/* SWITCH LOGIN/REGISTER */
+.switch-auth {
+  margin-top: 16px;
+  text-align: center;
+  font-size: 14px;
+}
+
+.switch-auth span {
+  color: #6fa3ff;
+  cursor: pointer;
+}
+
+.switch-auth span:hover {
+  text-decoration: underline;
+}
+
+/* ============================= */
+/* RESPONSIVE (HP)               */
+/* ============================= */
+@media (max-width: 768px) {
+  .hero {
+    flex-direction: column;
+    padding: 40px;
+  }
+
+  .hero-right {
+    margin-top: 40px;
+  }
+
+  .logo-big {
+    width: 280px;
+  }
+
+  .headline {
+    font-size: 40px;
+  }
+
+  .auth-page {
+    flex-direction: column;
+    padding: 40px;
+  }
+
+  .auth-left {
+    margin-bottom: 40px;
+  }
+
+  .auth-title {
+    font-size: 40px;
+  }
+}

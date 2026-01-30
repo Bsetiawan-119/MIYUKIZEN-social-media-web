@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Register - MIYUKIZEN</title>
+  <link rel="stylesheet" href="../css/desain.css">
+</head>
+<body>
+
+<div class="background"></div>
+
+<header class="top-left">
+  <img src="../asset/LOGOPUTIH.png" class="top-logo">
+  <span class="brand-text">MIYUKIZEN</span>
+</header>
+
+<div class="auth-page">
+
+  <div class="auth-left animate-left">
+    <h1 class="auth-title">
+      Buat akun baru<br>
+      dan mulai berbagi.
+    </h1>
+  </div>
+
+  <div class="auth-right animate-right">
+    <div class="auth-card">
+      <h2>Daftar</h2>
+
+      <form id="registerForm">
+        <input type="email" id="email" placeholder="Email" required>
+        <input type="password" id="password" placeholder="Password" required>
+
+        <button type="submit" class="auth-btn">Buat Akun</button>
+      </form>
+        <!-- TOMBOL KEMBALI -->
+            <button
+            type="button"
+            class="auth-btn"
+            style="
+                margin-top: 12px;
+                background: transparent;
+                border: 2px solid #6fa3ff;
+                color: #6fa3ff;
+            "
+            onclick="window.location.href='login.html'"
+            >
+            Kembali
+            </button>
+      <p class="switch-auth">
+        Sudah punya akun?
+        <span onclick="window.location.href='login.html'">Masuk</span>
+      </p>
+    </div>
+  </div>
+</div>
+
+<script src="../js/storage.js"></script>
+<script>
+document.getElementById("registerForm").addEventListener("submit", function(e) {
+  e.preventDefault();
+
+  const email = document.getElementById("email").value.trim();
+  const password = document.getElementById("password").value.trim();
+
+  if (password.length < 6) {
+    alert("Password minimal 6 karakter");
+    return;
+  }
+
+  const users = getData("users");
+
+  // kalau email sudah ada
+  if (users.find(u => u.email === email)) {
+    alert("Email sudah terdaftar, silakan login");
+    window.location.href = "login.html";
+    return;
+  }
+
+  // simpan akun
+  users.push({ email, password });
+  setData("users", users);
+
+  alert("Akun berhasil dibuat, silakan login");
+  window.location.href = "login.html"; // ⬅️ PENTING
+});
+</script>
+</body>
+</html>

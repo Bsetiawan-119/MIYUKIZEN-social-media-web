@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <title>Profil</title>
+
+  <link rel="stylesheet" href="../css/desain.css">
+  <link rel="stylesheet" href="../css/profile.css">
+
+  <script>
+    if (!localStorage.getItem("currentUser")) {
+      window.location.href = "login.html";
+    }
+  </script>
+</head>
+<body>
+
+<!-- BACKGROUND -->
+<div class="profile-bg"></div>
+
+<header class="topbar">
+  <div onclick="goDashboard()">←</div>
+  <strong>Profil</strong>
+  <div></div>
+</header>
+
+<div class="profile-container">
+  <img id="profileImage" class="profile-img">
+
+  <input type="file" id="profilePicInput" accept="image/*">
+
+  <input type="text" id="username" placeholder="Username">
+  <textarea id="bio" placeholder="Bio"></textarea>
+
+  <div class="profile-actions">
+  <button
+    type="button"
+    class="btn-cancel"
+    onclick="cancelProfile()"
+  >
+    Batal
+  </button>
+
+  <button
+    type="button"
+    class="btn-save"
+    onclick="saveProfile()"
+  >
+    Simpan
+  </button>
+</div>
+
+</div>
+
+<script src="../js/profile.js"></script>
+</body>
+</html>

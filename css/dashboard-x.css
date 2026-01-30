@@ -1,0 +1,416 @@
+/* ============================= */
+/* BACKGROUND */
+/* ============================= */
+.dashboard-bg {
+  position: fixed;
+  inset: 0;
+  background: url("../asset/BGDAS.png") center / cover no-repeat;
+  z-index: -2;
+}
+
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.65);
+  z-index: -1;
+}
+
+/* ============================= */
+/* TOPBAR */
+/* ============================= */
+.topbar {
+  height: 56px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 16px;
+  border-bottom: 1px solid #2f3336;
+}
+
+.top-left-bar,
+.top-right {
+  color: #1d9bf0;
+  cursor: pointer;
+}
+
+.top-logo {
+  height: 28px;
+}
+
+/* ============================= */
+/* LAYOUT */
+/* ============================= */
+.layout {
+  display: flex;
+}
+
+/* ============================= */
+/* SIDEBAR */
+/* ============================= */
+.sidebar {
+  width: 260px;
+  padding: 16px;
+  border-right: 1px solid #2f3336;
+}
+
+.profile-pic {
+  width: 72px;
+  height: 72px;
+  border-radius: 50%;
+  object-fit: cover;
+  cursor: pointer;
+}
+
+.sidebar-username {
+  font-weight: bold;
+  margin-top: 6px;
+}
+
+.sidebar-divider {
+  height: 1px;
+  background: #2f3336;
+  margin: 6px 0;
+}
+
+.sidebar-bio {
+  font-size: 13px;
+  color: #aaa;
+}
+
+.sidebar input {
+  margin-top: 12px;
+  width: 100%;
+  padding: 8px;
+  border-radius: 8px;
+  background: #000;
+  border: 1px solid #2f3336;
+  color: white;
+}
+
+/* ============================= */
+/* FEED */
+/* ============================= */
+.feed {
+  flex: 1;
+  max-width: 680px;
+  margin: 48px auto 0;
+  padding-left: 24px;
+}
+
+/* ============================= */
+/* POST CARD */
+/* ============================= */
+.post {
+  position: relative;
+  margin-bottom: 20px;
+  padding: 14px;
+  border-radius: 14px;
+  border: 1px solid #1d9bf0;
+  background: rgba(0,0,0,0.55);
+}
+
+.post-header {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 8px;
+}
+
+.post-avatar {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  object-fit: cover;
+  cursor: pointer;
+}
+
+.post-author {
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.post-time {
+  font-size: 12px;
+  color: #8899a6;
+}
+
+/* ============================= */
+/* POST MENU */
+/* ============================= */
+.post-menu {
+  position: absolute;
+  right: 14px;
+  top: 14px;
+  cursor: pointer;
+}
+
+.menu-box {
+  position: absolute;
+  right: 0;
+  top: 26px;
+  background: #111;
+  border: 1px solid #2f3336;
+  border-radius: 10px;
+  display: none;
+  z-index: 10;
+}
+
+.menu-box button {
+  all: unset;
+  display: block;
+  padding: 10px 14px;
+  cursor: pointer;
+}
+
+/* ============================= */
+/* POST CONTENT */
+/* ============================= */
+.post-content img {
+  width: 100%;
+  max-height: 420px;
+  object-fit: contain;
+  border-radius: 12px;
+  margin-top: 10px;
+}
+
+/* ============================= */
+/* ACTION BAR */
+/* ============================= */
+.post-actions-bar {
+  display: flex;
+  gap: 14px;
+  margin-top: 12px;
+  font-size: 14px;
+  color: #8899a6;
+}
+
+.post-actions-bar span {
+  cursor: pointer;
+}
+
+.post-actions-bar span:hover {
+  color: #1d9bf0;
+}
+
+/* ============================= */
+/* COMMENTS */
+/* ============================= */
+.comments {
+  margin-top: 10px;
+  padding-top: 10px;
+  border-top: 1px solid #2f3336;
+}
+
+.comment {
+  display: flex;
+  gap: 8px;
+  margin-bottom: 8px;
+}
+
+.comment-avatar {
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  background: #1d9bf0;
+  color: white;
+  font-size: 12px;
+  font-weight: bold;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+
+.comment-bubble {
+  flex: 1;
+  background: #111;
+  padding: 8px 12px;
+  border-radius: 12px;
+}
+
+/* COMMENT ACTIONS */
+.comment-actions {
+  display: flex;
+  gap: 12px;
+  margin-top: 6px;
+  font-size: 13px;
+}
+
+.comment-actions button {
+  all: unset;
+  cursor: pointer;
+  color: #1d9bf0;
+}
+
+.comment-actions button.delete {
+  color: #f4212e;
+}
+
+/* COMMENT INPUT */
+.comment-input {
+  width: 100%;
+  margin-top: 8px;
+  padding: 10px;
+  border-radius: 999px;
+  background: #000;
+  border: 1px solid #2f3336;
+  color: white;
+}
+
+.comment-input:focus {
+  outline: none;
+  border-color: #1d9bf0;
+}
+
+/* ============================= */
+/* REPLY */
+/* ============================= */
+.reply {
+  margin-top: 6px;
+  margin-left: 32px;
+  font-size: 14px;
+  color: #ddd;
+}
+
+.reply-input {
+  width: 100%;
+  margin-top: 8px;
+  padding: 8px 12px;
+  border-radius: 999px;
+  background: #000;
+  border: 1px solid #2f3336;
+  color: white;
+}
+
+.reply-input:focus {
+  outline: none;
+  border-color: #1d9bf0;
+}
+
+/* ============================= */
+/* EDIT MODE */
+/* ============================= */
+.edit-card {
+  background: #000;
+  border: 1px solid #1d9bf0;
+  border-radius: 14px;
+  padding: 12px;
+}
+
+.edit-area {
+  width: 100%;
+  margin-top: 8px;
+  padding: 8px;
+  border-radius: 8px;
+  background: #000;
+  border: 1px solid #1d9bf0;
+  color: white;
+}
+
+.edit-images {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+  margin-top: 8px;
+}
+
+.edit-images img {
+  width: 90px;
+  height: 90px;
+  border-radius: 8px;
+  object-fit: cover;
+}
+
+.remove-img {
+  position: absolute;
+  top: -6px;
+  right: -6px;
+  width: 18px;
+  height: 18px;
+  background: red;
+  color: white;
+  border-radius: 50%;
+  font-size: 12px;
+  text-align: center;
+  cursor: pointer;
+}
+
+.edit-buttons {
+  display: flex;
+  gap: 10px;
+  margin-top: 10px;
+}
+
+.btn-save-edit {
+  flex: 1;
+  background: #1d9bf0;
+  color: white;
+  border: none;
+  padding: 8px;
+  border-radius: 999px;
+}
+
+.btn-cancel-edit {
+  flex: 1;
+  background: #f4212e;
+  color: white;
+  border: none;
+  padding: 8px;
+  border-radius: 999px;
+}
+
+/* ============================= */
+/* FAB */
+/* ============================= */
+.fab {
+  position: fixed;
+  bottom: 24px;
+  right: 24px;
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  background: #1d9bf0;
+  color: white;
+  font-size: 32px;
+  border: none;
+  cursor: pointer;
+  z-index: 20;
+}
+
+/* ============================= */
+/* DELETE MODAL */
+/* ============================= */
+.delete-box {
+  width: 320px;
+  margin: 200px auto;
+  padding: 20px;
+  background: #000;
+  border-radius: 16px;
+  border: 1px solid #2f3336;
+  text-align: center;
+}
+
+.delete-actions {
+  display: flex;
+  gap: 10px;
+  margin-top: 16px;
+}
+
+.btn-cancel-delete {
+  flex: 1;
+  background: #2f3336;
+  color: white;
+  border: none;
+  padding: 10px;
+  border-radius: 999px;
+}
+
+.btn-confirm-delete {
+  flex: 1;
+  background: #f4212e;
+  color: white;
+  border: none;
+  padding: 10px;
+  border-radius: 999px;
+}

@@ -1,0 +1,78 @@
+.profile-bg {
+  position: fixed;
+  inset: 0;
+  background: url("../asset/BGDAS.png") center / cover no-repeat;
+  z-index: -2;
+}
+
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.65);
+  z-index: -1;
+}
+
+.profile-container {
+  max-width: 420px;
+  margin: 80px auto;
+  padding: 20px;
+  background: rgba(0,0,0,0.45);
+  backdrop-filter: blur(10px);
+  border-radius: 20px;
+}
+
+.profile-img {
+  width: 96px;
+  height: 96px;
+  border-radius: 50%;
+  object-fit: cover;
+  display: block;
+  margin: auto;
+}
+
+.profile-container input,
+.profile-container textarea {
+  width: 100%;
+  margin-top: 14px;
+  padding: 10px;
+  background: #000;
+  border: 1px solid #2f3336;
+  color: white;
+  border-radius: 10px;
+}
+
+.profile-actions {
+  display: flex;
+  gap: 12px;
+  margin-top: 20px;
+}
+
+.btn-save {
+  flex: 1;
+  padding: 12px;
+  border-radius: 999px;
+  background: #1d9bf0;
+  border: none;
+  color: white;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.btn-save:hover {
+  background: #1a8cd8;
+}
+
+.btn-cancel {
+  flex: 1;
+  padding: 12px;
+  border-radius: 999px;
+  background: transparent;
+  border: 1px solid #2f3336;
+  color: #71767b;
+  cursor: pointer;
+}
+
+.btn-cancel:hover {
+  background: rgba(255,255,255,0.05);
+}

@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Masuk Akun - MIYUKIZEN</title>
+
+  <link rel="stylesheet" href="../css/desain.css">
+</head>
+<body>
+
+  <!-- BACKGROUND -->
+  <div class="background"></div>
+
+  <!-- HEADER -->
+  <header class="top-left">
+    <img src="../asset/LOGOPUTIH.png" class="top-logo">
+    <span class="brand-text">MIYUKIZEN</span>
+  </header>
+
+  <!-- AUTH PAGE -->
+  <div class="auth-page">
+
+    <!-- KIRI -->
+    <div class="auth-left animate-left">
+      <h1 class="auth-title">
+        Masuk ke akunmu<br>
+        dan lanjutkan cerita.
+      </h1>
+      <p class="auth-subtitle">
+        Gunakan email dan password yang sudah kamu buat.
+      </p>
+    </div>
+
+    <!-- KANAN -->
+    <div class="auth-right animate-right">
+      <div class="auth-card">
+        <form id="loginForm">
+            <input
+                type="email"
+                id="loginEmail"
+                placeholder="Email"
+                required
+            >
+
+            <input
+                type="password"
+                id="loginPassword"
+                placeholder="Password"
+                required
+            >
+
+            <button type="submit" class="auth-btn">
+                Masuk
+            </button>
+            </form>
+
+            <!-- TOMBOL KEMBALI -->
+            <button
+            type="button"
+            class="auth-btn"
+            style="
+                margin-top: 12px;
+                background: transparent;
+                border: 2px solid #6fa3ff;
+                color: #6fa3ff;
+            "
+            onclick="window.location.href='login.html'"
+            >
+            Kembali
+            </button>
+
+
+        <p class="switch-auth">
+          Belum punya akun?
+          <span onclick="window.location.href='register.html'">
+            Buat akun
+          </span>
+        </p>
+
+      </div>
+    </div>
+
+  </div>
+
+  <!-- SCRIPT -->
+  <script src="../js/storage.js"></script>
+  <script src="../js/auth.js"></script>
+
+</body>
+</html>

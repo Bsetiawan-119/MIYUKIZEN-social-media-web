@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>MIYUKIZEN</title>
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="../css/desain.css">
+</head>
+<body>
+
+  <!-- BACKGROUND -->
+  <div class="background"></div>
+
+  <!-- HEADER POJOK KIRI ATAS -->
+  <header class="top-left animate-top">
+    <img src="../asset/LOGOPUTIH.png" class="top-logo" alt="Logo Putih">
+    <span class="brand-text">MIYUKIZEN</span>
+  </header>
+
+  <!-- HERO -->
+  <div class="hero">
+
+    <!-- KIRI -->
+    <div class="hero-left animate-left">
+      <h1 class="headline">
+        Bebas cerita<br>
+        Bebas berbagi.
+      </h1>
+
+      <div 
+        class="btn-group">
+      <button class="btn-login" id="openModal">Login</button>
+    </div>
+
+    </div>
+
+    <!-- KANAN -->
+    <div class="hero-right animate-right">
+      <img src="../asset/logo.png" class="logo-big" alt="Logo Besar">
+    </div>
+
+  </div>
+
+  <!-- LOGIN -->
+  <div class="modal" id="loginModal">
+    <div class="modal-content animate-scale">
+
+      <h2>Selamat Datang di MIYUKIZEN</h2>
+
+      <button class="modal-btn primary"
+        onclick="window.location.href='register.html'">
+        Buat Akun
+      </button>
+
+      <button class="modal-btn secondary"
+        onclick="window.location.href='masukakun.html'">
+        Masuk Akun
+      </button>
+
+      <!--  TAMBAHAN GUEST -->
+      <button class="modal-btn secondary"
+        onclick="loginAsGuest()">
+        Masuk sebagai Guest
+      </button>
+
+      <span class="close" id="closeModal">×</span>
+    </div>
+  </div>
+
+  <!-- SCRIPT -->
+  <script>
+    const modal = document.getElementById("loginModal");
+    document.getElementById("openModal").onclick = () =>
+      modal.classList.add("show");
+    document.getElementById("closeModal").onclick = () =>
+      modal.classList.remove("show");
+
+    function loginAsGuest() {
+      localStorage.removeItem("currentUser");
+      window.location.href = "dashboard.html";
+    }
+
+    document.getElementById("guestBtn").onclick = loginAsGuest;
+  </script>
+
+</body>
+</html>

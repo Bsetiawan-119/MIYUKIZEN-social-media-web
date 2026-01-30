@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <title>Dashboard</title>
+
+  <link rel="stylesheet" href="../css/desain.css">
+  <link rel="stylesheet" href="../css/dashboard-x.css">
+
+</head>
+<body>
+
+<div class="dashboard-bg"></div>
+
+<header class="topbar">
+  <div class="top-left-bar" onclick="goProfile()">Profil</div>
+  <img src="../asset/LOGOPUTIH.png" class="top-logo">
+  <div class="top-right" onclick="handleLogout()">Logout</div>
+</header>
+
+<div class="layout">
+
+  <!-- SIDEBAR -->
+  <aside class="sidebar">
+
+    <!-- 🔽 TAMBAHAN (WRAPPER PROFIL) -->
+    <div id="sidebarProfile">
+      <img id="sidebarProfilePic" class="profile-pic" onclick="goProfile()">
+      <div id="sidebarUsername" class="sidebar-username"></div>
+      <div class="sidebar-divider"></div>
+      <div id="sidebarBio" class="sidebar-bio"></div>
+    </div>
+    <!-- 🔼 AKHIR TAMBAHAN -->
+
+    <!-- SEARCH USER -->
+    <input
+      type="text"
+      id="searchUserInput"
+      placeholder="Cari user..."
+      oninput="searchUsers()"
+    >
+
+    <!-- SEARCH POST -->
+    <input
+      type="text"
+      id="searchInput"
+      placeholder="Cari postingan..."
+      oninput="searchPosts()"
+    >
+  </aside>
+
+  <!-- FEED -->
+  <main class="feed">
+    <div id="postsFeed"></div>
+  </main>
+
+</div>
+
+<!-- FLOATING BUTTON -->
+<button class="fab" onclick="togglePostModal()">+</button>
+
+<!-- MODAL DELETE -->
+<div class="modal" id="deleteModal">
+  <div class="delete-box">
+    <h3>Hapus postingan?</h3>
+    <p>Postingan ini akan dihapus permanen.</p>
+
+    <div class="delete-actions">
+      <button class="btn-cancel-delete" onclick="closeDelete()">Batal</button>
+      <button class="btn-confirm-delete" onclick="confirmDelete()">Hapus</button>
+    </div>
+  </div>
+</div>
+
+<!-- MODAL POST -->
+<div class="modal" id="postModal">
+  <div class="modal-box">
+    <textarea id="postText" placeholder="Apa yang sedang terjadi?"></textarea>
+
+    <div id="imagePreviewContainer" class="image-preview-container"></div>
+
+    <div class="post-actions">
+      <label class="upload-box">
+        📷 Upload Foto
+        <input type="file" id="postImage" accept="image/*" multiple hidden>
+      </label>
+      <button class="btn-post" onclick="submitPost()">Posting</button>
+    </div>
+  </div>
+</div>
+
+<script src="../js/storage.js"></script>
+<script src="../js/auth.js"></script>
+<script src="../js/dashboard-x.js"></script>
+</body>
+</html>
