@@ -389,5 +389,18 @@ function searchPosts() {
   const q = searchInput.value.toLowerCase();
   renderPosts(posts.filter(p => p.text.toLowerCase().includes(q)));
 }
+function searchUsers() {
+  const q = document.getElementById("searchUserInput").value.toLowerCase();
 
+  if (!q) {
+    renderPosts(posts);
+    return;
+  }
+
+  const filtered = posts.filter(p =>
+    p.author.toLowerCase().includes(q)
+  );
+
+  renderPosts(filtered);
+}
 renderPosts(posts);
