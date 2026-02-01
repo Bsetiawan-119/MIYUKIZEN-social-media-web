@@ -1,5 +1,5 @@
 # MIYUKIZEN-social-media-web
-A Twitter-like mini social media web application featuring login, guest mode, posting, likes, comments, and profile management built with HTML, CSS, and JavaScript.
+Menggunakan bahasa HTML, CSS, and JavaScript.
 <h2>Alur Penggunaan Website (Dari Awal Sampai Akhir)</h2> <h2>1. Halaman Landing / Login</h2>
 
 Halaman pertama yang muncul saat website dibuka.
