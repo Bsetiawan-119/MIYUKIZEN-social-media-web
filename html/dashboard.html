@@ -23,14 +23,14 @@
   <!-- SIDEBAR -->
   <aside class="sidebar">
 
-    <!-- 🔽 TAMBAHAN (WRAPPER PROFIL) -->
+    <!--  TAMBAHAN (WRAPPER PROFIL) -->
     <div id="sidebarProfile">
       <img id="sidebarProfilePic" class="profile-pic" onclick="goProfile()">
       <div id="sidebarUsername" class="sidebar-username"></div>
       <div class="sidebar-divider"></div>
       <div id="sidebarBio" class="sidebar-bio"></div>
     </div>
-    <!-- 🔼 AKHIR TAMBAHAN -->
+    <!--  AKHIR TAMBAHAN -->
 
     <!-- SEARCH USER -->
     <input
@@ -74,20 +74,32 @@
 
 <!-- MODAL POST -->
 <div class="modal" id="postModal">
-  <div class="modal-box">
-    <textarea id="postText" placeholder="Apa yang sedang terjadi?"></textarea>
+  <div class="post-modal-card">
 
+    <textarea
+      id="postText"
+      class="post-textarea"
+      placeholder="Apa yang sedang terjadi?"
+    ></textarea>
+
+    <!-- PREVIEW IMAGE -->
     <div id="imagePreviewContainer" class="image-preview-container"></div>
 
-    <div class="post-actions">
-      <label class="upload-box">
+    <div class="post-modal-actions">
+      <label class="upload-btn">
         📷 Upload Foto
         <input type="file" id="postImage" accept="image/*" multiple hidden>
       </label>
-      <button class="btn-post" onclick="submitPost()">Posting</button>
+
+      <div class="post-btn-group">
+        <button class="btn-cancel" onclick="closePostModal()">Batal</button>
+        <button class="btn-post" onclick="submitPost()">Simpan</button>
+      </div>
     </div>
+
   </div>
 </div>
+
 
 <script src="../js/storage.js"></script>
 <script src="../js/auth.js"></script>

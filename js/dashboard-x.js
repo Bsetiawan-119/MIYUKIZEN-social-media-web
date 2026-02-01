@@ -50,20 +50,50 @@ function togglePostModal() {
     postModal.style.display === "block" ? "none" : "block";
 }
 
+/* ================= MODAL POST ================= */
+function togglePostModal() {
+  if (isGuest) {
+    alert("Login diperlukan untuk membuat postingan");
+    return;
+  }
+
+  postModal.style.display = "flex"; // ⬅️ TAMBAHAN (tengah layar)
+}
+
+function closePostModal() {
+  postModal.style.display = "none";
+  postText.value = "";
+  postImage.value = "";
+  selectedImages = [];
+  imagePreviewContainer.innerHTML = "";
+}
+
 /* ================= UPLOAD FOTO (POST BARU) ================= */
 postImage.addEventListener("change", () => {
   if (isGuest) return;
-
-  selectedImages = [];
-  imagePreviewContainer.innerHTML = "";
 
   Array.from(postImage.files).forEach(file => {
     const r = new FileReader();
     r.onload = () => {
       selectedImages.push(r.result);
-      const img = document.createElement("img");
-      img.src = r.result;
-      imagePreviewContainer.appendChild(img);
+
+      // PREVIEW WRAPPER
+      const box = document.createElement("div");
+      box.className = "preview-img-box";
+
+      box.innerHTML = `
+        <img src="${r.result}">
+        <div class="preview-remove">×</div>
+      `;
+
+      // HAPUS FOTO SEBELUM POST
+      box.querySelector(".preview-remove").onclick = () => {
+        const index = selectedImages.indexOf(r.result);
+        if (index !== -1) selectedImages.splice(index, 1);
+        box.remove();
+      };
+
+      imagePreviewContainer.appendChild(box);
     };
     r.readAsDataURL(file);
   });
@@ -92,12 +122,7 @@ function submitPost() {
 
   setData("posts", posts);
 
-  postText.value = "";
-  postImage.value = "";
-  selectedImages = [];
-  imagePreviewContainer.innerHTML = "";
-  togglePostModal();
-
+  closePostModal(); // ⬅️ TAMBAHAN (biar rapi & jelas)
   renderPosts(posts);
 }
 
