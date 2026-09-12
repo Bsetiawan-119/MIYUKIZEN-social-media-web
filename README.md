@@ -147,3 +147,6 @@ Cara logout:
 <h2>Penutup</h2>
 
 MIYUKIZEN merupakan mini social media yang sederhana namun lengkap, dengan alur sistem yang jelas, pengalaman pengguna yang nyaman, serta fitur yang mendekati aplikasi sosial media modern.
+
+Jika ingin melihat lebih jelas mengenai projek ini bisa kunjungi
+https://youtu.be/fGhfq7Uyc4k?si=nl--ZPHDLhVOL3Lh
